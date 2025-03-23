@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         0.9
+// @version         0.7
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
@@ -18,7 +18,7 @@
     const STYLES = {
         colors: {
             textColor: '#2D2D2D',
-            errorColor: 'rgba(64, 64, 64, 0.9)',
+            errorColor: 'rgba(64, 64, 64, 0.8)',
         },
         fonts: {
             default: "'Roboto', sans-serif",
