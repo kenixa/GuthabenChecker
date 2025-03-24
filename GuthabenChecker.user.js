@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         0.7
+// @version         0.7.1
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
@@ -459,7 +459,7 @@ setInterval(fetchExchangeRate, 30 * 60 * 1000);
             },
             'kinguin.net': () => {
                 const itemsWrapper = document.querySelector('div[data-test="itemsWrapper"]');
-                itemsWrapper?.querySelectorAll('div.sc-kOcGyv.dqrtgT').forEach(productDiv => {
+                itemsWrapper?.querySelectorAll('div.sc-kOcGyv.dqrtgT .sc-eQxpLG.cXdgIz').forEach(productDiv => {
                     const productName = productDiv.querySelector('a[data-test="productName"]')?.innerText.trim();
                     if (productName) uniqueProductNames.add(productName);
                 });
