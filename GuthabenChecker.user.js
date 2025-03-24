@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         0.7.1
+// @version         0.7.2
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
@@ -42,24 +42,26 @@
                 selectedProducts: document.querySelectorAll('span.QkJSBi'),
             }),
         },
-        'kinguin.net': {
-            paymentPageUrl: (window.location.href.includes('/de') ? "https://www.kinguin.net/de/new-checkout/review" : "https://www.kinguin.net/new-checkout/review"),
+                'kinguin.net': {
+            paymentPageUrl: "/new-checkout/review",
             getElements: () => {
-                const totalTexts = ['Gesamtsumme', 'Grand total'];
-                const totalElement = [...document.querySelectorAll('*')]
-                    .find(el => totalTexts.includes(el.textContent.trim()));
+                const totalElements = [...document.querySelectorAll('*')].filter(el =>
+                                                                                 ['Gesamtsumme', 'Grand total'].includes(el.textContent.trim())
+                                                                                );
 
                 const summarySection = document.getElementById("summarySection");
-                const relevantTotalElement = summarySection?.contains(totalElement) ? totalElement : document.querySelector('*');
+                const relevantTotalElement = summarySection
+                ? totalElements.find(el => summarySection.contains(el))
+                : totalElements[0];
 
-                const paymentMethodClassElement = relevantTotalElement?.closest('span')?.nextElementSibling ??
-                    relevantTotalElement?.closest('span')?.querySelector('.price-mobile');
+                const paymentMethodClassElement = relevantTotalElement?.closest('span')?.nextElementSibling ||
+                      relevantTotalElement?.closest('span')?.querySelector('.price-mobile');
 
-                const quantityInputs = document.querySelectorAll('input[type="number"][data-test="quantityInput"]');
+                const quantityInputs = [...document.querySelectorAll('input[type="number"][data-test="quantityInput"]')];
 
                 return {
-                    paymentMethodClassElement,
-                    selectedProducts: [...quantityInputs],
+                    paymentMethodClassElement: paymentMethodClassElement,
+                    selectedProducts: quantityInputs,
                 };
             },
         },
@@ -459,7 +461,7 @@ setInterval(fetchExchangeRate, 30 * 60 * 1000);
             },
             'kinguin.net': () => {
                 const itemsWrapper = document.querySelector('div[data-test="itemsWrapper"]');
-                itemsWrapper?.querySelectorAll('div.sc-kOcGyv.dqrtgT .sc-eQxpLG.cXdgIz').forEach(productDiv => {
+                itemsWrapper?.querySelectorAll('div.sc-kOcGyv.dqrtgT, div.sc-cQYgkQ.jsjxtq').forEach(productDiv => {
                     const productName = productDiv.querySelector('a[data-test="productName"]')?.innerText.trim();
                     if (productName) uniqueProductNames.add(productName);
                 });
