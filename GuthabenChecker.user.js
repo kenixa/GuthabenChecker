@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         2.0.1
+// @version         2.0.2
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
@@ -1196,14 +1196,41 @@
     // Helper Functions
     // ========================================================================
 
-    const kinguinRemover = () => {
-        if (currentSite !== 'kinguin.net') return;
-        const selectors = ['div.sc-eZKLwX.gyWTdX', 'div.sc-eqUgKp.uHfgn'];
-        for (const selector of selectors) {
-            const element = document.querySelector(selector);
-            if (element) element.remove();
+const kinguinRemover = () => {
+    if (currentSite !== 'kinguin.net') return;
+    const headings = document.querySelectorAll('h2');
+
+    for (const h2 of headings) {
+        if (h2.textContent?.trim() === "Für dich empfohlen") {
+
+            const container = h2.parentElement?.parentElement?.parentElement;
+            if (container) {
+                container.remove();
+                break;
+            }
+        }
+    }
+};
+
+    if (currentSite === 'kinguin.net') {
+    const observeKinguinChanges = (mutationsList, observer) => {
+        kinguinRemover();
+    };
+
+    const kinguinPageObserver = new MutationObserver(observeKinguinChanges);
+    const startObserverWhenReady = () => {
+        if (document.body) {
+            kinguinPageObserver.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+            kinguinRemover();
+        } else {
+            setTimeout(startObserverWhenReady, 100);
         }
     };
+    startObserverWhenReady();
+}
 
     const getProductCount = (selectedProducts) => {
         let count = 0;
