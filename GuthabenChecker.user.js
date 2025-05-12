@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         2.0.2
+// @version         2.0.3
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
@@ -40,14 +40,25 @@
                 let paymentMethodClassElement = null;
                 let selectedProducts = [];
 
-                try {
-                    const totalLabelElement = [...document.querySelectorAll('*')]
-                    .find(el =>
-                          Array.from(el.childNodes).some(node =>
-                                                         node.nodeType === Node.TEXT_NODE &&
-                                                         (node.textContent.trim().startsWith('Total') || node.textContent.trim().startsWith('Gesamt'))
-                                                        )
-                         );
+        try {
+            const totalLabelElement = [...document.querySelectorAll('*')]
+                .find(el =>
+                    Array.from(el.childNodes).some(node => {
+                        if (node.nodeType !== Node.TEXT_NODE) {
+                            return false;
+                        }
+                        const trimmedText = node.textContent.trim();
+                        const lowerTrimmedText = trimmedText.toLowerCase();
+
+                        if (trimmedText.startsWith('Total')) {
+                            return !lowerTrimmedText.includes('available balance');
+                        }
+                        if (trimmedText.startsWith('Gesamt')) {
+                            return true;
+                        }
+                        return false;
+                    })
+                );
 
                     paymentMethodClassElement = totalLabelElement?.querySelector('div')?.querySelector('span') ?? null;
 
