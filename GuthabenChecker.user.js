@@ -552,11 +552,11 @@
                         return;
                     }
 
-                    let foundCode = null; const targetTitleIdentifier = "8%";
+                    let foundCode = null; const targetTitleIdentifier = "8% off selected products";
                     for (const item of kinguinVoucherItems) {
                         const titleElement = item.querySelector('.info-title .title');
                         const codeElement = item.querySelector('.voucher-code span.code.copy-clipboard-action[data-clipboard-text]');
-                        if (titleElement && codeElement && titleElement.textContent.includes(targetTitleIdentifier)) {
+                        if (titleElement && codeElement && titleElement.textContent.trim() === targetTitleIdentifier) {
                             const code = codeElement.getAttribute('data-clipboard-text');
                             if (code) { foundCode = code.trim(); break; }
                         }
