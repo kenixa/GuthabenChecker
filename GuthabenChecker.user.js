@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         2.0.3
+// @version         2.0.4
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
