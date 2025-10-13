@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         2.0.4
+// @version         2.0.5
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
@@ -196,7 +196,8 @@
                 `PSN Guthaben Karte ${c} EUR (DE) PSN key DEUTSCHLAND`,
                 `PlayStation Network Card €${c} DE`,
                 `PlayStation Network Card PSN EUR DE €${c}`,
-                `PlayStation Store ${c} EUR Gift Card (Germany) - Digital Key`
+                `PlayStation Store ${c} EUR Gift Card (Germany) - Digital Key`,
+                `PlayStation Network EUR ${c} Gift Card DE`
             ]
         },
         nintendo: {
@@ -265,7 +266,8 @@
                 `Google Play Gift Card EUR DE €${c}`,
                 `Google Play Gift Card EUR EU €${c}`,
                 `Google Play ${c} EUR Gift Card (Europe) - Digital Key`,
-                `Google Play ${c} EUR Gift Card (Germany) - Digital Key`
+                `Google Play ${c} EUR Gift Card (Germany) - Digital Key`,
+                `Google Play EUR ${c} Gift Card EU`
             ]
         },
         ikea: {
