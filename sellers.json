@@ -15,6 +15,7 @@
     "Gamzie"
   ],
   "Blacklist": [
-    "Thunder"
+    "Thunder",
+    "GameTrain"
   ]
 }
