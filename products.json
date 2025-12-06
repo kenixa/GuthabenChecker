@@ -192,6 +192,15 @@
       "Zalando for Men Gift Card ${c} EUR Key GERMANY"
     ]
   },
+    "MediaMarkt": {
+    "name": "Media Markt",
+    "factors": [0.86000, 0.88000, 0.92000, 0.9201],
+    "thresholds": [0.86, 0.88, 0.92],
+    "currency": "EUR",
+    "text": [
+      "Media Markt €${c} Gift Card DE",
+    ]
+  },
   "itunesTRY": {
     "name": "iTunes Türkei",
     "factors": [0.9600, 1.0000, 1.0400, 1.0401],
