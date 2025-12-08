@@ -211,7 +211,7 @@
     "thresholds": [0.86, 0.88, 0.92],
     "currency": "EUR",
     "text": [
-      "Roblox Game eCard EUR €${c} EU"
+      "Roblox Game eCard EUR ${c} EU"
     ]
   },
   "itunesTRY": {
