@@ -205,6 +205,15 @@
       "Media Markt €${c} Gift Card DE"
     ]
   },
+    "Roblox": {
+    "name": "Roblox",
+    "factors": [0.86000, 0.88000, 0.92000, 0.9201],
+    "thresholds": [0.86, 0.88, 0.92],
+    "currency": "EUR",
+    "text": [
+      "Roblox Game eCard EUR €${c} EU"
+    ]
+  },
   "itunesTRY": {
     "name": "iTunes Türkei",
     "factors": [0.9600, 1.0000, 1.0400, 1.0401],
