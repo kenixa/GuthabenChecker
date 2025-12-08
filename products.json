@@ -51,7 +51,8 @@
       "Amazon Gift Card ${c} EUR Key GERMANY",
       "Amazon €${c} Gift Card DE",
       "Amazon Gift Card EUR DE €${c}",
-      "Amazon ${c} EUR Gift Card (Germany) - Digital Key"
+      "Amazon ${c} EUR Gift Card (Germany) - Digital Key",
+      "Amazon EUR ${c} Gift Card DE"
     ]
   },
   "blizzard": {
