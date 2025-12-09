@@ -1,241 +1,395 @@
 {
-  "playstation": {
-    "name": "PlayStation Store",
-    "factors": [0.79999, 0.80999, 0.81999, 0.82],
-    "thresholds": [0.7999, 0.8099, 0.8199],
-    "currency": "EUR",
-    "text": [
-      "PlayStation Network Card ${c} EUR (DE) PSN Key GERMANY",
-      "Playstation Network Card ${c} EUR (DE) PSN Key GERMANY",
-      "PSN Guthaben Karte ${c} EUR (DE) PSN key DEUTSCHLAND",
-      "PlayStation Network Card €${c} DE",
-      "PlayStation Network Card PSN EUR DE €${c}",
-      "PlayStation Store ${c} EUR Gift Card (Germany) - Digital Key",
-      "PlayStation Network EUR ${c} Gift Card DE"
-    ]
-  },
-  "nintendo": {
-    "name": "Nintendo eShop",
-    "factors": [0.80999, 0.82999, 0.85999, 0.86],
-    "thresholds": [0.8099, 0.8299, 0.8599],
-    "currency": "EUR",
-    "text": [
-      "Nintendo eShop Card ${c} EUR Key GERMANY",
-      "Nintendo eShop Card ${c} EUR Key EUROPE",
-      "Nintendo eShop Prepaid Card €${c} EU Key",
-      "Nintendo eShop Prepaid Card €${c} DE Key",
-      "Nintendo eShop EUR DE €${c}",
-      "Nintendo eShop EUR €${c}",
-      "Nintendo eShop ${c} EUR Gift Card (Europe) - Digital Key",
-      "Nintendo eShop ${c} EUR Gift Card (Germany) - Digital Key"
-    ]
-  },
-  "airbnb": {
-    "name": "Airbnb",
-    "factors": [0.89999, 0.92500, 0.93699, 0.9370],
-    "thresholds": [0.8999, 0.9250, 0.9369],
-    "currency": "EUR",
-    "text": [
-      "Airbnb ${c} EUR Gift Card Key GERMANY",
-      "Airbnb €${c} Gift Card DE",
-      "Airbnb Gift Card EUR DE €${c}",
-      "Airbnb ${c} EUR Gift Card (Germany) - Digital Key"
-    ]
-  },
-  "amazon": {
-    "name": "Amazon",
-    "factors": [0.89999, 0.92500, 0.93699, 0.9370],
-    "thresholds": [0.8999, 0.9250, 0.9369],
-    "currency": "EUR",
-    "text": [
-      "Amazon Gift Card ${c} EUR Key GERMANY",
-      "Amazon €${c} Gift Card DE",
-      "Amazon Gift Card EUR DE €${c}",
-      "Amazon ${c} EUR Gift Card (Germany) - Digital Key",
-      "Amazon EUR ${c} Gift Card DE"
-    ]
-  },
-  "blizzard": {
-    "name": "Battle.net Store",
-    "factors": [0.90000, 0.92000, 0.94000, 0.9401],
-    "thresholds": [0.9000, 0.9200, 0.9400],
-    "currency": "EUR",
-    "text": [
-      "Battle.net Gift Card ${c} EUR Battle.net Key EUROPE",
-      "Blizzard €${c} EU Battle.net Gift Card",
-      "Blizzard Gift Card EUR DE €${c}",
-      "Blizzard Gift Card EUR EU €${c}",
-      "Blizzard ${c} EUR Gift Card (Europe) - Digital Key",
-      "Blizzard EUR ${c} Battle.net Gift Card EU"
-    ]
-  },
-  "googleplay": {
-    "name": "Google Play Store",
-    "factors": [0.90000, 0.92000, 0.94000, 0.9401],
-    "thresholds": [0.9000, 0.9200, 0.9400],
-    "currency": "EUR",
-    "text": [
-      "Google Play Gift Card ${c} EUR Key GERMANY",
-      "Google Play Gift Card ${c} EUR Key EUROPE",
-      "Google Play €${c} EU Gift Card",
-      "Google Play €${c} DE Gift Card",
-      "Google Play Gift Card EUR DE €${c}",
-      "Google Play Gift Card EUR EU €${c}",
-      "Google Play ${c} EUR Gift Card (Europe) - Digital Key",
-      "Google Play ${c} EUR Gift Card (Germany) - Digital Key",
-      "Google Play EUR ${c} Gift Card EU"
-    ]
-  },
-  "ikea": {
-    "name": "Ikea",
-    "factors": [0.89999, 0.92500, 0.93699, 0.9370],
-    "thresholds": [0.8999, 0.9250, 0.9369],
-    "currency": "EUR",
-    "text": [
-      "IKEA Gift Card ${c} EUR Key GERMANY",
-      "IKEA €${c} Gift Card DE",
-      "IKEA €${c} Gift Card EU",
-      "IKEA Gift Card EUR DE €${c}",
-      "IKEA ${c} EUR Gift Card (Germany) - Digital Key"
-    ]
-  },
-  "itunes": {
-    "name": "iTunes",
-    "factors": [0.90000, 0.92000, 0.94000, 0.9401],
-    "thresholds": [0.9000, 0.9200, 0.9400],
-    "currency": "EUR",
-    "text": [
-      "Apple iTunes Gift Card ${c} EUR iTunes Key GERMANY",
-      "Apple Gift Card ${c} EUR Key GERMANY",
-      "iTunes €${c} DE Card",
-      "Apple €${c} Gift Card DE",
-      "iTunes Gift Card EUR DE €${c}",
-      "App Store & iTunes EUR DE €${c}",
-      "Apple iTunes ${c} EUR Gift Card (Germany) - Digital Key",
-      "Apple ${c} EUR Gift Card (Germany) - Digital Key"
-    ]
-  },
-  "lieferando": {
-    "name": "Lieferando",
-    "factors": [0.830000, 0.860000, 0.890000, 0.9201],
-    "thresholds": [0.8300, 0.8600, 0.8900],
-    "currency": "EUR",
-    "text": [
-      "Lieferando.de Gift Card ${c} EUR Key GERMANY",
-      "Lieferando €${c} Voucher DE",
-      "Lieferando (Just Eat) ${c} EUR Gift Card (Germany) - Digital Key",
-      "Just Eat Gift Card EUR DE €${c}"
-    ]
-  },
-  "netflix": {
-    "name": "Netflix",
-    "factors": [0.820000, 0.840000, 0.860000, 0.8601],
-    "thresholds": [0.8200, 0.8400, 0.8600],
-    "currency": "EUR",
-    "text": [
-      "Netflix Gift Card ${c} EUR Key GERMANY",
-      "Netflix Gift Card ${c} EUR Key EUROPE",
-      "Netflix Gift Card €${c} EU",
-      "Netflix €${c} Gift Card EU",
-      "Netflix EUR ${c} Gift Card EU",
-      "Netflix Gift Card EUR DE €${c}",
-      "Netflix Gift Card EUR EU €${c}",
-      "Netflix ${c} EUR Gift Card (Europe) - Digital Key",
-      "Netflix ${c} EUR Gift Card (Germany) - Digital Key"
-    ]
-  },
-  "steam": {
-    "name": "Steam",
-    "factors": [0.90000, 0.92000, 0.94001, 0.94002],
-    "thresholds": [0.9000, 0.9200, 0.9400],
-    "currency": "EUR",
-    "text": [
-      "Steam Wallet Gift Card ${c} EUR Steam Key GERMANY",
-      "Steam Wallet Gift Card ${c} EUR Steam Key EUROPE",
-      "Steam Guthaben Karte ${c} EUR Steam Key EUROPE",
-      "Steam Guthaben Karte ${c} EUR Steam Key GERMANY",
-      "Steam Wallet Card €${c} EU Activation Code",
-      "Steam Wallet Card €${c} Global Activation Code",
-      "Steam Gift Card €${c} EU Activation Code",
-      "Steam Gift Card EUR DE €${c}",
-      "Steam Gift Card EUR EU €${c}",
-      "Steam Wallet ${c} EUR Gift Card (Europe) - Digital Key"
-    ]
-  },
-  "xbox": {
-    "name": "Xbox Store",
-    "factors": [0.85999, 0.87999, 0.90000, 0.9001],
-    "thresholds": [0.8599, 0.8799, 0.9000],
-    "currency": "EUR",
-    "text": [
-      "Xbox Live Gift Card ${c} EUR Xbox Live Key GERMANY",
-      "Xbox Live Gift Card ${c} EUR Xbox Live Key EUROPE",
-      "Xbox Live Guthaben Karte ${c} EUR Xbox Live key EUROPE",
-      "XBOX Live €${c} Prepaid Card EU",
-      "XBOX Live €${c} Prepaid Card DE",
-      "Xbox Live Gift Card EUR EU €${c}",
-      "Xbox Live Gift Card EUR €${c}",
-      "Xbox Live Gift Card EUR DE €${c}",
-      "Xbox ${c} EUR Gift Card (Europe) - Digital Key",
-      "Xbox ${c} EUR Gift Card (Germany) - Digital Key",
-      "XBOX Live EUR ${c} Prepaid Card EU",
-      "XBOX Live EUR ${c} Prepaid Card DE"
-    ]
-  },
-  "zalando": {
-    "name": "Zalando",
-    "factors": [0.86000, 0.88000, 0.92000, 0.9201],
-    "thresholds": [0.86, 0.88, 0.92],
-    "currency": "EUR",
-    "text": [
-      "Zalando Gift Card ${c} EUR Key GERMANY",
-      "Zalando ${c} EUR Gift Card DE",
-      "Zalando Gift Card EUR DE €${c}",
-      "Zalando Gift Card EUR EU €${c}",
-      "Zalando ${c} EUR Gift Card (Germany) - Digital Key",
-      "Zalando for Men Gift Card ${c} EUR Key GERMANY"
-    ]
-  },
-  "MediaMarkt": {
-    "name": "Media Markt",
-    "factors": [0.86000, 0.88000, 0.92000, 0.9201],
-    "thresholds": [0.86, 0.88, 0.92],
-    "currency": "EUR",
-    "text": [
-      "Media Markt €${c} Gift Card DE"
-    ]
-  },
+    "playstation": {
+        "name": "PlayStation Store",
+        "factors": [
+            0.79999,
+            0.80999,
+            0.81999,
+            0.82
+        ],
+        "thresholds": [
+            0.7999,
+            0.8099,
+            0.8199
+        ],
+        "currency": "EUR",
+        "text": [
+            "PlayStation Network Card ${c} EUR (DE) PSN Key GERMANY",
+            "Playstation Network Card ${c} EUR (DE) PSN Key GERMANY",
+            "PSN Guthaben Karte ${c} EUR (DE) PSN key DEUTSCHLAND",
+            "PlayStation Network Card €${c} DE",
+            "PlayStation Network Card PSN EUR DE €${c}",
+            "PlayStation Store ${c} EUR Gift Card (Germany) - Digital Key",
+            "PlayStation Network EUR ${c} Gift Card DE"
+        ]
+    },
+    "nintendo": {
+        "name": "Nintendo eShop",
+        "factors": [
+            0.80999,
+            0.82999,
+            0.85999,
+            0.86
+        ],
+        "thresholds": [
+            0.8099,
+            0.8299,
+            0.8599
+        ],
+        "currency": "EUR",
+        "text": [
+            "Nintendo eShop Card ${c} EUR Key GERMANY",
+            "Nintendo eShop Card ${c} EUR Key EUROPE",
+            "Nintendo eShop Prepaid Card €${c} EU Key",
+            "Nintendo eShop Prepaid Card €${c} DE Key",
+            "Nintendo eShop EUR DE €${c}",
+            "Nintendo eShop EUR €${c}",
+            "Nintendo eShop ${c} EUR Gift Card (Europe) - Digital Key",
+            "Nintendo eShop ${c} EUR Gift Card (Germany) - Digital Key"
+        ]
+    },
+    "airbnb": {
+        "name": "Airbnb",
+        "factors": [
+            0.89999,
+            0.925,
+            0.93699,
+            0.937
+        ],
+        "thresholds": [
+            0.8999,
+            0.925,
+            0.9369
+        ],
+        "currency": "EUR",
+        "text": [
+            "Airbnb ${c} EUR Gift Card Key GERMANY",
+            "Airbnb €${c} Gift Card DE",
+            "Airbnb Gift Card EUR DE €${c}",
+            "Airbnb ${c} EUR Gift Card (Germany) - Digital Key"
+        ]
+    },
+    "amazon": {
+        "name": "Amazon",
+        "factors": [
+            0.89999,
+            0.925,
+            0.93699,
+            0.937
+        ],
+        "thresholds": [
+            0.8999,
+            0.925,
+            0.9369
+        ],
+        "currency": "EUR",
+        "text": [
+            "Amazon Gift Card ${c} EUR Key GERMANY",
+            "Amazon €${c} Gift Card DE",
+            "Amazon Gift Card EUR DE €${c}",
+            "Amazon ${c} EUR Gift Card (Germany) - Digital Key",
+            "Amazon EUR ${c} Gift Card DE"
+        ]
+    },
+    "blizzard": {
+        "name": "Battle.net Store",
+        "factors": [
+            0.9,
+            0.92,
+            0.94,
+            0.9401
+        ],
+        "thresholds": [
+            0.9,
+            0.92,
+            0.94
+        ],
+        "currency": "EUR",
+        "text": [
+            "Battle.net Gift Card ${c} EUR Battle.net Key EUROPE",
+            "Blizzard €${c} EU Battle.net Gift Card",
+            "Blizzard Gift Card EUR DE €${c}",
+            "Blizzard Gift Card EUR EU €${c}",
+            "Blizzard ${c} EUR Gift Card (Europe) - Digital Key",
+            "Blizzard EUR ${c} Battle.net Gift Card EU"
+        ]
+    },
+    "googleplay": {
+        "name": "Google Play Store",
+        "factors": [
+            0.9,
+            0.92,
+            0.94,
+            0.9401
+        ],
+        "thresholds": [
+            0.9,
+            0.92,
+            0.94
+        ],
+        "currency": "EUR",
+        "text": [
+            "Google Play Gift Card ${c} EUR Key GERMANY",
+            "Google Play Gift Card ${c} EUR Key EUROPE",
+            "Google Play €${c} EU Gift Card",
+            "Google Play €${c} DE Gift Card",
+            "Google Play Gift Card EUR DE €${c}",
+            "Google Play Gift Card EUR EU €${c}",
+            "Google Play ${c} EUR Gift Card (Europe) - Digital Key",
+            "Google Play ${c} EUR Gift Card (Germany) - Digital Key",
+            "Google Play EUR ${c} Gift Card EU"
+        ]
+    },
+    "ikea": {
+        "name": "Ikea",
+        "factors": [
+            0.89999,
+            0.925,
+            0.93699,
+            0.937
+        ],
+        "thresholds": [
+            0.8999,
+            0.925,
+            0.9369
+        ],
+        "currency": "EUR",
+        "text": [
+            "IKEA Gift Card ${c} EUR Key GERMANY",
+            "IKEA €${c} Gift Card DE",
+            "IKEA €${c} Gift Card EU",
+            "IKEA Gift Card EUR DE €${c}",
+            "IKEA ${c} EUR Gift Card (Germany) - Digital Key"
+        ]
+    },
+    "itunes": {
+        "name": "iTunes",
+        "factors": [
+            0.9,
+            0.92,
+            0.94,
+            0.9401
+        ],
+        "thresholds": [
+            0.9,
+            0.92,
+            0.94
+        ],
+        "currency": "EUR",
+        "text": [
+            "Apple iTunes Gift Card ${c} EUR iTunes Key GERMANY",
+            "Apple Gift Card ${c} EUR Key GERMANY",
+            "iTunes €${c} DE Card",
+            "Apple €${c} Gift Card DE",
+            "iTunes Gift Card EUR DE €${c}",
+            "App Store & iTunes EUR DE €${c}",
+            "Apple iTunes ${c} EUR Gift Card (Germany) - Digital Key",
+            "Apple ${c} EUR Gift Card (Germany) - Digital Key"
+        ]
+    },
+    "lieferando": {
+        "name": "Lieferando",
+        "factors": [
+            0.83,
+            0.86,
+            0.89,
+            0.9201
+        ],
+        "thresholds": [
+            0.83,
+            0.86,
+            0.89
+        ],
+        "currency": "EUR",
+        "text": [
+            "Lieferando.de Gift Card ${c} EUR Key GERMANY",
+            "Lieferando €${c} Voucher DE",
+            "Lieferando (Just Eat) ${c} EUR Gift Card (Germany) - Digital Key",
+            "Just Eat Gift Card EUR DE €${c}"
+        ]
+    },
+    "netflix": {
+        "name": "Netflix",
+        "factors": [
+            0.82,
+            0.84,
+            0.86,
+            0.8601
+        ],
+        "thresholds": [
+            0.82,
+            0.84,
+            0.86
+        ],
+        "currency": "EUR",
+        "text": [
+            "Netflix Gift Card ${c} EUR Key GERMANY",
+            "Netflix Gift Card ${c} EUR Key EUROPE",
+            "Netflix Gift Card €${c} EU",
+            "Netflix €${c} Gift Card EU",
+            "Netflix EUR ${c} Gift Card EU",
+            "Netflix Gift Card EUR DE €${c}",
+            "Netflix Gift Card EUR EU €${c}",
+            "Netflix ${c} EUR Gift Card (Europe) - Digital Key",
+            "Netflix ${c} EUR Gift Card (Germany) - Digital Key"
+        ]
+    },
+    "steam": {
+        "name": "Steam",
+        "factors": [
+            0.9,
+            0.92,
+            0.94001,
+            0.94002
+        ],
+        "thresholds": [
+            0.9,
+            0.92,
+            0.94
+        ],
+        "currency": "EUR",
+        "text": [
+            "Steam Wallet Gift Card ${c} EUR Steam Key GERMANY",
+            "Steam Wallet Gift Card ${c} EUR Steam Key EUROPE",
+            "Steam Guthaben Karte ${c} EUR Steam Key EUROPE",
+            "Steam Guthaben Karte ${c} EUR Steam Key GERMANY",
+            "Steam Wallet Card €${c} EU Activation Code",
+            "Steam Wallet Card €${c} Global Activation Code",
+            "Steam Gift Card €${c} EU Activation Code",
+            "Steam Gift Card EUR DE €${c}",
+            "Steam Gift Card EUR EU €${c}",
+            "Steam Wallet ${c} EUR Gift Card (Europe) - Digital Key"
+        ]
+    },
+    "xbox": {
+        "name": "Xbox Store",
+        "factors": [
+            0.85999,
+            0.87999,
+            0.9,
+            0.9001
+        ],
+        "thresholds": [
+            0.8599,
+            0.8799,
+            0.9
+        ],
+        "currency": "EUR",
+        "text": [
+            "Xbox Live Gift Card ${c} EUR Xbox Live Key GERMANY",
+            "Xbox Live Gift Card ${c} EUR Xbox Live Key EUROPE",
+            "Xbox Live Guthaben Karte ${c} EUR Xbox Live key EUROPE",
+            "XBOX Live €${c} Prepaid Card EU",
+            "XBOX Live €${c} Prepaid Card DE",
+            "Xbox Live Gift Card EUR EU €${c}",
+            "Xbox Live Gift Card EUR €${c}",
+            "Xbox Live Gift Card EUR DE €${c}",
+            "Xbox ${c} EUR Gift Card (Europe) - Digital Key",
+            "Xbox ${c} EUR Gift Card (Germany) - Digital Key",
+            "XBOX Live EUR ${c} Prepaid Card EU",
+            "XBOX Live EUR ${c} Prepaid Card DE"
+        ]
+    },
+    "zalando": {
+        "name": "Zalando",
+        "factors": [
+            0.86,
+            0.88,
+            0.92,
+            0.9201
+        ],
+        "thresholds": [
+            0.86,
+            0.88,
+            0.92
+        ],
+        "currency": "EUR",
+        "text": [
+            "Zalando Gift Card ${c} EUR Key GERMANY",
+            "Zalando ${c} EUR Gift Card DE",
+            "Zalando Gift Card EUR DE €${c}",
+            "Zalando Gift Card EUR EU €${c}",
+            "Zalando ${c} EUR Gift Card (Germany) - Digital Key",
+            "Zalando for Men Gift Card ${c} EUR Key GERMANY"
+        ]
+    },
+    "MediaMarkt": {
+        "name": "Media Markt",
+        "factors": [
+            0.86,
+            0.88,
+            0.92,
+            0.9201
+        ],
+        "thresholds": [
+            0.86,
+            0.88,
+            0.92
+        ],
+        "currency": "EUR",
+        "text": [
+            "Media Markt €${c} Gift Card DE",
+            "Media Markt Gift Card ${c} EUR Key GERMANY"
+        ]
+    },
     "Roblox": {
-    "name": "Roblox",
-    "factors": [0.86000, 0.88000, 0.92000, 0.9201],
-    "thresholds": [0.86, 0.88, 0.92],
-    "currency": "EUR",
-    "text": [
-      "Roblox Game eCard EUR ${c} EU"
-    ]
-  },
-  "itunesTRY": {
-    "name": "iTunes Türkei",
-    "factors": [0.9600, 1.0000, 1.0400, 1.0401],
-    "thresholds": [0.9600, 1.0000, 1.0400],
-    "currency": "TRY",
-    "text": [
-      "Apple iTunes Gift Card ${c} TRY iTunes Key TURKEY",
-      "iTunes ₺${c} TR Card",
-      "Apple ${c} TRY Gift Card (Turkey) - Digital Key",
-      "iTunes Gift Card TRY TR ₺${c}"
-    ]
-  },
-  "netflixTRY": {
-    "name": "Netflix Türkei",
-    "factors": [1.02, 1.06, 1.10, 1.11],
-    "thresholds": [1.02, 1.06, 1.10],
-    "currency": "TRY",
-    "text": [
-      "Netflix Gift Card ${c} TRY Key TURKEY",
-      "Netflix TRY ${c} Gift Card TR",
-      "Netflix ${c} TRY Gift Card (Turkey) - Digital Key",
-      "Netflix Gift Card TRY TR ₺${c}"
-    ]
-  }
+        "name": "Roblox",
+        "factors": [
+            0.86,
+            0.88,
+            0.92,
+            0.9201
+        ],
+        "thresholds": [
+            0.86,
+            0.88,
+            0.92
+        ],
+        "currency": "EUR",
+        "text": [
+            "Roblox Game eCard EUR ${c} EU"
+        ]
+    },
+    "itunesTRY": {
+        "name": "iTunes Türkei",
+        "factors": [
+            0.96,
+            1,
+            1.04,
+            1.0401
+        ],
+        "thresholds": [
+            0.96,
+            1,
+            1.04
+        ],
+        "currency": "TRY",
+        "text": [
+            "Apple iTunes Gift Card ${c} TRY iTunes Key TURKEY",
+            "iTunes ₺${c} TR Card",
+            "Apple ${c} TRY Gift Card (Turkey) - Digital Key",
+            "iTunes Gift Card TRY TR ₺${c}"
+        ]
+    },
+    "netflixTRY": {
+        "name": "Netflix Türkei",
+        "factors": [
+            1.02,
+            1.06,
+            1.1,
+            1.11
+        ],
+        "thresholds": [
+            1.02,
+            1.06,
+            1.1
+        ],
+        "currency": "TRY",
+        "text": [
+            "Netflix Gift Card ${c} TRY Key TURKEY",
+            "Netflix TRY ${c} Gift Card TR",
+            "Netflix ${c} TRY Gift Card (Turkey) - Digital Key",
+            "Netflix Gift Card TRY TR ₺${c}"
+        ]
+    }
 }
