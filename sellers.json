@@ -1,23 +1,24 @@
 {
-  "Safe": [
-    "Ultimate Choice",
-    "Joker Cards",
-    "Worldofcdkeys",
-    "ready2play",
-    "GameSaloon",
-    "Kinguin",
-    "PL digital",
-    "Top-Notch Keys",
-    "GamingWorld",
-    "RecommendedGames",
-    "EL SHAYEB STORE",
-    "CyberVolt"
-  ],
-  "Vorsicht": [
-    "Gamzie"
-  ],
-  "Blacklist": [
-    "Thunder",
-    "GameTrain"
-  ]
+    "Safe": [
+        "Ultimate Choice",
+        "Joker Cards",
+        "Worldofcdkeys",
+        "ready2play",
+        "GameSaloon",
+        "Kinguin",
+        "PL digital",
+        "Top-Notch Keys",
+        "GamingWorld",
+        "RecommendedGames",
+        "EL SHAYEB STORE",
+        "CyberVolt",
+        "maragame"
+    ],
+    "Vorsicht": [
+        "Gamzie"
+    ],
+    "Blacklist": [
+        "Thunder",
+        "GameTrain"
+    ]
 }
