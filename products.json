@@ -205,7 +205,8 @@
             "Lieferando.de Gift Card ${c} EUR Key GERMANY",
             "Lieferando €${c} Voucher DE",
             "Lieferando (Just Eat) ${c} EUR Gift Card (Germany) - Digital Key",
-            "Just Eat Gift Card EUR DE €${c}"
+            "Just Eat Gift Card EUR DE €${c}",
+            "Lieferando EUR ${c} Voucher DE"
         ]
     },
     "netflix": {
