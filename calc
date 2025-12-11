@@ -1,132 +1,116 @@
-    let tryDayPrice = 0.027; // Standardwert für TRY -> EUR, wird von API überschrieben
+// calc.js - Globale Definitionen
 
-    // Funktion zum Abrufen des aktuellen Wechselkurses (nur relevant für TRY)
-    const fetchExchangeRate = async () => {
-        try {
-            const response = await fetch('https://api.exchangerate-api.com/v4/latest/TRY');
-            if (!response.ok) throw new Error(`API-Anfrage fehlgeschlagen: ${response.status}`);
-            const data = await response.json();
-            if (data && data.rates && data.rates.EUR) {
-                tryDayPrice = data.rates.EUR;
-            } else {
-            }
-        } catch (error) {
+// Wechselkurs Variable global machen
+window.tryDayPrice = 0.027; 
+
+// Funktion global verfügbar machen (window.funcName)
+window.fetchExchangeRate = async () => {
+    try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/TRY');
+        if (!response.ok) throw new Error(`API-Anfrage fehlgeschlagen: ${response.status}`);
+        const data = await response.json();
+        if (data && data.rates && data.rates.EUR) {
+            window.tryDayPrice = data.rates.EUR;
+            console.log("Wechselkurs aktualisiert: " + window.tryDayPrice);
         }
-    };
+    } catch (error) {
+        console.warn("Fehler beim Laden des Wechselkurses, nutze Fallback:", error);
+    }
+};
 
-    // Rufe den Wechselkurs einmal beim Start des Scripts ab
-    fetchExchangeRate();
+// Direkt ausführen
+window.fetchExchangeRate();
 
-    const getCurrentDateTime = () => {
-        const now = new Date();
-        return `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()} um ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} Uhr`;
-    };
+window.getCurrentDateTime = () => {
+    const now = new Date();
+    return `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()} um ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} Uhr`;
+};
 
-    // **Angepasst für Währung**
-    const determinePriceCategory = (price, category, productCount) => {
-        if (!currentParams.currency) return 'Unbekannt'; // Sicherheitscheck
+// Parameter currentParams kommt aus dem Hauptskript (Scope-Inheritance via eval)
+window.determinePriceCategory = (price, category, productCount) => {
+    if (!currentParams.currency) return 'Unbekannt'; 
 
-        const numericPrice = parseFloat(price.replace(',', '.').replace('€', '').replace('TRY','').trim());
-        const numericCategory = parseFloat(category);
-        const currencyFactor = currentParams.currency === 'TRY' ? tryDayPrice : 1; // Faktor basierend auf Währung
-        const factorBase = numericCategory * currencyFactor * productCount;
+    const numericPrice = parseFloat(price.replace(',', '.').replace('€', '').replace('TRY','').replace('₺','').trim());
+    const numericCategory = parseFloat(category);
+    // Zugriff auf window.tryDayPrice
+    const currencyFactor = currentParams.currency === 'TRY' ? window.tryDayPrice : 1; 
+    const factorBase = numericCategory * currencyFactor * productCount;
 
-        if (isNaN(numericPrice) || isNaN(numericCategory) || factorBase <= 0) return 'Fehler'; // Ungültige Werte
+    if (isNaN(numericPrice) || isNaN(numericCategory) || factorBase <= 0) return 'Fehler'; 
 
-        const factor = (numericPrice / factorBase).toFixed(5); // Faktor auf 5 Nachkommastellen
+    const factor = (numericPrice / factorBase).toFixed(5); 
 
-        // Verwende die Schwellenwerte aus den aktuellen Parametern
-        if (!currentParams.thresholds || currentParams.thresholds.length < 3) return 'Thresholds fehlen';
+    if (!currentParams.thresholds || currentParams.thresholds.length < 3) return 'Thresholds fehlen';
 
-        if (factor <= currentParams.thresholds[0]) return 'Top';
-        if (factor <= currentParams.thresholds[1]) return 'Gut';
-        if (factor <= currentParams.thresholds[2]) return 'Okay';
-        return 'Schlecht';
-    };
+    if (factor <= currentParams.thresholds[0]) return 'Top';
+    if (factor <= currentParams.thresholds[1]) return 'Gut';
+    if (factor <= currentParams.thresholds[2]) return 'Okay';
+    return 'Schlecht';
+};
 
-    const formatPriceForDisplay = (price, forceSymbol = null) => {
-        // Nimmt eine Zahl an und formattiert sie als String mit Komma und Währungssymbol
-        if (typeof price !== 'number' || isNaN(price)) {
-            console.error("Ungültiger Preis für Formatierung:", price);
-            return "N/A";
+window.formatPriceForDisplay = (price, forceSymbol = null) => {
+    if (typeof price !== 'number' || isNaN(price)) {
+        console.error("Ungültiger Preis für Formatierung:", price);
+        return "N/A";
+    }
+    const currencySymbol = forceSymbol ? forceSymbol : (currentParams.currency === 'TRY' ? '₺' : '€');
+    let priceString = price.toFixed(2).replace('.', ','); 
+    return `${priceString}${currencySymbol}`;
+};
+
+window.getOrientationText = (category, productCount) => {
+    if (!currentParams.currency || !currentParams.factors || !currentParams.factors.length || currentParams.factors.length < 4) {
+        return 'Parameter für Orientierung fehlen';
+    }
+    const numericCategory = parseFloat(category);
+    if (isNaN(numericCategory)) return 'Ungültige Kategorie';
+    
+    const currencyFactor = currentParams.currency === 'TRY' ? window.tryDayPrice : 1;
+    if (isNaN(currencyFactor)) return 'Währungsfaktor Fehler';
+
+    const factors = currentParams.factors;
+    const priceLabels = ['Top', 'Gut', 'Okay', 'Schlecht'];
+
+    const priceTexts = factors.map((factor, index) => {
+        let numericPrice;
+        let label;
+
+        if (index < 3) { 
+            if (isNaN(factor)) return 'Faktor Fehler';
+            numericPrice = (factor * numericCategory * productCount * currencyFactor * 100) / 100;
+            label = 'bis';
+        } else { 
+            if (isNaN(factors[2])) return 'Faktor Fehler';
+            const okayNumericPrice = (factors[2] * numericCategory * productCount * currencyFactor * 100) / 100;
+            numericPrice = okayNumericPrice + 0.01; 
+            label = 'ab';
         }
-        // Nutze das erzwungene Symbol, wenn vorhanden, sonst bestimme es anhand der Produktwährung
-        const currencySymbol = forceSymbol ? forceSymbol : (currentParams.currency === 'TRY' ? 'TRY' : '€');
-        let priceString = price.toFixed(2).replace('.', ','); // Immer 2 Nachkommastellen, Komma als Dezimaltrenner
-        return `${priceString}${currencySymbol}`;
-    };
 
-
-    // **Optimierte Version mit originaler Formatierungslogik (immer €)**
-    const getOrientationText = (category, productCount) => {
-        // --- Anfang: Eingabe-Validierung (wie vorher) ---
-        if (!currentParams.currency || !currentParams.factors || !currentParams.factors.length || currentParams.factors.length < 4) {
-            console.error("Fehlende oder ungültige Parameter für getOrientationText:", currentParams);
-            return 'Parameter für Orientierung fehlen';
-        }
-        const numericCategory = parseFloat(category);
-        if (isNaN(numericCategory)) {
-            console.error("Ungültige Kategorie für getOrientationText:", category);
-            return 'Ungültige Kategorie';
-        }
-        const currencyFactor = currentParams.currency === 'TRY' ? tryDayPrice : 1;
-        if (isNaN(currencyFactor)) {
-            console.error("Ungültiger Währungsfaktor:", currencyFactor, "bei Währung:", currentParams.currency);
-            return 'Währungsfaktor Fehler';
-        }
-        // --- Ende: Eingabe-Validierung ---
-
-        const factors = currentParams.factors;
-        const priceLabels = ['Top', 'Gut', 'Okay', 'Schlecht'];
-
-        // Kombinierte Schleife: Berechnen, Formatieren, Text bauen
-        const priceTexts = factors.map((factor, index) => {
-            let numericPrice;
-            let label;
-
-            // Berechne den numerischen Preis (Euro-Äquivalent)
-            if (index < 3) { // 'bis' Schwellen (Top, Gut, Okay)
-                if (isNaN(factor)) return 'Faktor Fehler'; // Fehler im Faktor
-                numericPrice = (factor * numericCategory * productCount * currencyFactor * 100) / 100;
-                label = 'bis';
-            } else { // 'ab' Schwelle (Schlecht) - basiert auf 'Okay'-Faktor (index 2)
-                if (isNaN(factors[2])) return 'Faktor Fehler'; // Fehler im relevanten Faktor
-                const okayNumericPrice = (factors[2] * numericCategory * productCount * currencyFactor * 100) / 100;
-                numericPrice = okayNumericPrice + 0.01; // Ab diesem Wert ist es 'Schlecht'
-                label = 'ab';
-            }
-
-            // --- Anfang: Gekürzte Original-Formatierungslogik (immer €) ---
-            let formattedPrice;
-            if (isNaN(numericPrice)) {
-                formattedPrice = 'N/A€';
-            } else {
-                const numStr = numericPrice.toString();
-                const parts = numStr.split('.'); // Trenne am Punkt
-                if (parts.length === 1) { // Kein Punkt vorhanden
-                    formattedPrice = parts[0] + ',00€';
-                } else { // Punkt vorhanden
-                    const decimalPart = parts[1] || ''; // Hole Nachkommateil
-                    if (decimalPart.length === 1) { // Eine Nachkommastelle
-                        formattedPrice = parts[0] + ',' + decimalPart + '0€';
-                    } else { // Zwei oder mehr Nachkommastellen -> abschneiden!
-                        formattedPrice = parts[0] + ',' + decimalPart.substring(0, 2) + '€';
-                    }
+        let formattedPrice;
+        if (isNaN(numericPrice)) {
+            formattedPrice = 'N/A€';
+        } else {
+            const numStr = numericPrice.toString();
+            const parts = numStr.split('.'); 
+            if (parts.length === 1) { 
+                formattedPrice = parts[0] + ',00€';
+            } else { 
+                const decimalPart = parts[1] || ''; 
+                if (decimalPart.length === 1) { 
+                    formattedPrice = parts[0] + ',' + decimalPart + '0€';
+                } else { 
+                    formattedPrice = parts[0] + ',' + decimalPart.substring(0, 2) + '€';
                 }
             }
-            // --- Ende: Gekürzte Original-Formatierungslogik ---
-
-            // Sicherheitscheck für Label
-            const priceLabel = priceLabels[index] || 'Unbekannt';
-
-            return `<b>${priceLabel}</b> ${label} <b>${formattedPrice}</b>`;
-        });
-
-        // Prüfe, ob Fehler aufgetreten sind
-        if (priceTexts.some(text => text.includes('Fehler'))) {
-            console.error("Fehler bei der Erstellung der Orientierungstexte:", priceTexts);
-            return "Fehler in Orientierungsberechnung";
         }
 
-        return priceTexts.join(' | ');
-    };
+        const priceLabel = priceLabels[index] || 'Unbekannt';
+        return `<b>${priceLabel}</b> ${label} <b>${formattedPrice}</b>`;
+    });
+
+    if (priceTexts.some(text => text.includes('Fehler'))) {
+        return "Fehler in Orientierungsberechnung";
+    }
+
+    return priceTexts.join(' | ');
+};
