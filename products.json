@@ -138,7 +138,8 @@
             "Google Play Gift Card EUR EU €${c}",
             "Google Play ${c} EUR Gift Card (Europe) - Digital Key",
             "Google Play ${c} EUR Gift Card (Germany) - Digital Key",
-            "Google Play EUR ${c} Gift Card EU"
+            "Google Play EUR ${c} Gift Card EU",
+            "Google Play EUR ${c} Gift Card DE"
         ]
     },
     "ikea": {
