@@ -234,7 +234,8 @@
             "Netflix Gift Card EUR DE €${c}",
             "Netflix Gift Card EUR EU €${c}",
             "Netflix ${c} EUR Gift Card (Europe) - Digital Key",
-            "Netflix ${c} EUR Gift Card (Germany) - Digital Key"
+            "Netflix ${c} EUR Gift Card (Germany) - Digital Key",
+            "Netflix EUR ${c} Gift Card DE"
         ]
     },
     "steam": {
