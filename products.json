@@ -369,7 +369,8 @@
         ],
         "currency": "EUR",
         "text": [
-            "Adidas Store EUR ${c} Gift Card DE"
+            "Adidas Store EUR ${c} Gift Card DE",
+            "Adidas Store ${c} Gift Card DE"
         ]
     },
     "itunesTRY": {
