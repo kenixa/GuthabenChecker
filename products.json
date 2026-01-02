@@ -354,6 +354,24 @@
             "Roblox Game eCard EUR ${c} EU"
         ]
     },
+    "Adidas": {
+        "name": "Adidas",
+        "factors": [
+            0.86,
+            0.88,
+            0.92,
+            0.9201
+        ],
+        "thresholds": [
+            0.86,
+            0.88,
+            0.92
+        ],
+        "currency": "EUR",
+        "text": [
+            "Adidas Store EUR ${c} Gift Card DE"
+        ]
+    },
     "itunesTRY": {
         "name": "iTunes Türkei",
         "factors": [
