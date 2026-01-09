@@ -186,7 +186,8 @@
             "iTunes Gift Card EUR DE €${c}",
             "App Store & iTunes EUR DE €${c}",
             "Apple iTunes ${c} EUR Gift Card (Germany) - Digital Key",
-            "Apple ${c} EUR Gift Card (Germany) - Digital Key"
+            "Apple ${c} EUR Gift Card (Germany) - Digital Key",
+            "Apple EUR ${c} Gift Card DE"
         ]
     },
     "lieferando": {
