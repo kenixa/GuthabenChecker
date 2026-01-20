@@ -67,7 +67,8 @@
             "Airbnb ${c} EUR Gift Card Key GERMANY",
             "Airbnb €${c} Gift Card DE",
             "Airbnb Gift Card EUR DE €${c}",
-            "Airbnb ${c} EUR Gift Card (Germany) - Digital Key"
+            "Airbnb ${c} EUR Gift Card (Germany) - Digital Key",
+            "Airbnb EUR ${c} Gift Card DE"
         ]
     },
     "amazon": {
