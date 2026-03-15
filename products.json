@@ -162,7 +162,8 @@
             "IKEA €${c} Gift Card DE",
             "IKEA €${c} Gift Card EU",
             "IKEA Gift Card EUR DE €${c}",
-            "IKEA ${c} EUR Gift Card (Germany) - Digital Key"
+            "IKEA ${c} EUR Gift Card (Germany) - Digital Key",
+            "IKEA EUR ${c} Gift Card DE"
         ]
     },
     "itunes": {
