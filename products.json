@@ -337,7 +337,8 @@
         "currency": "EUR",
         "text": [
             "Media Markt €${c} Gift Card DE",
-            "Media Markt Gift Card ${c} EUR Key GERMANY"
+            "Media Markt Gift Card ${c} EUR Key GERMANY",
+            "Media Markt EUR ${c} Gift Card DE"
         ]
     },
     "Roblox": {
