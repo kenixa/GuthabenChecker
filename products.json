@@ -20,7 +20,8 @@
             "PlayStation Network Card €${c} DE",
             "PlayStation Network Card PSN EUR DE €${c}",
             "PlayStation Store ${c} EUR Gift Card (Germany) - Digital Key",
-            "PlayStation Network EUR ${c} Gift Card DE"
+            "PlayStation Network EUR ${c} Gift Card DE",
+            "PlayStation Network Card EUR ${c} DE"
         ]
     },
     "nintendo": {
