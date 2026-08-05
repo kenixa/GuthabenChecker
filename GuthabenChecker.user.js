@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Guthaben Checker (Beta)
 // @namespace       http://tampermonkey.net/
-// @version         2.1.0
+// @version         2.1.1
 // @description     Checkt Guthabenseiten
 // @author          kenixa
 // @match           https://www.eneba.com/*
@@ -769,19 +769,13 @@
         // ========================================================================
 
         const kinguinRemover = () => {
-            if (currentSite !== 'kinguin.net') return;
-            const headings = document.querySelectorAll('h2');
+            if (currentSite !== "kinguin.net") return;
 
-            for (const h2 of headings) {
-                if (h2.textContent?.trim() === "Für dich empfohlen") {
-
-                    const container = h2.parentElement?.parentElement?.parentElement;
-                    if (container) {
-                        container.remove();
-                        break;
-                    }
+            document.querySelectorAll("span").forEach(span => {
+                if (span.textContent.trim() === "Ausgewählt für dich") {
+                    span.closest(".recommended-products")?.remove();
                 }
-            }
+            });
         };
 
         if (currentSite === 'kinguin.net') {
